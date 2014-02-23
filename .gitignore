@@ -2,9 +2,4 @@ packages/
 pubspec.lock
 .project
 .buildlog
-*.js_
-*.js.deps
-*.js.map
 .project
-*.dart.js
-*.dart.precompiled.js

@@ -1,6 +1,0 @@
-name: mathfacts
-author: Josh Peterson
-description: A web application which creates practice math facts tests.
-dependencies:
-  browser: any
-  unittest: any
