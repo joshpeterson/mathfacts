@@ -7,3 +7,4 @@ pubspec.lock
 *.js.map
 .project
 *.dart.js
+*.dart.precompiled.js
