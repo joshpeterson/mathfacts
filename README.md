@@ -5,4 +5,4 @@ This is the source code for a website which creates math fact practice tests. It
 
 * [Dart](http://dartlang.org)
 * [MathJax](http://mathjax.org)
-* [Bootstrap](http://getbootstrap.org)
+* [Bootstrap](http://getbootstrap.com)
