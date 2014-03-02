@@ -1,6 +1,6 @@
 import 'dart:html';
 import 'dart:convert';
-import 'package:mathfacts/sum_formatter.dart';
+import 'package:mathfacts/fact_formatter.dart';
 import 'package:mathfacts/sums_generator.dart';
 
 void main() {
@@ -8,7 +8,7 @@ void main() {
   int lowerBound = int.parse(config['lowerBound']);
   int upperBound = int.parse(config['upperBound']);
   
-  var formatter = new SumFormatter();
+  var formatter = new FactFormatter("+");
   var generator = new SumsGenerator(lowerBound, upperBound);
   
   var titleText = 'Math Facts: ${generator.title}';
