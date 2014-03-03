@@ -1564,42 +1564,67 @@ GS:{
 "":"Tp;",
 call$1:function(a){return J.Mp(a)}}}],["","file:///C:/Users/Josh/Documents/mathfacts/web/main.dart",,F,{
 "":"",
-Iq:function(){var z,y,x,w,v,u,t,s,r,q,p,o
+Iq:function(){var z,y,x,w,v,u,t,s,r,q,p,o,n,m,l,k,j
 z=C.Ct.kV(J.xR(document.querySelector("#config")))
 y=J.U6(z)
-x=G.xm(H.Hp(y.t(z,"lowerBound"),null,null),H.Hp(y.t(z,"upperBound"),null,null))
-w="Math Facts: "+x.IZ
-document.querySelector("#title").textContent=w
-document.querySelector("#header").textContent=w
-v=document.querySelector("#factsTable")
-for(y=J.RE(v),u=x.HO,t=0;t<5;++t){s=W.r3("tr",null)
-for(r=J.RE(s),q=0;q<10;++q){p=W.r3("td",null)
-if(x.ea+1>u.length){x.ea=0
-H.jE(u,C.pr)}o=x.ea
-x.ea=o+1
-if(o>=u.length)return H.e(u,o)
-o=u[o]
-J.t3(p,"\\begin{array}{cc} & "+o.gBb()+" \\\\ + & "+H.d(o.T8)+" \\\\ \\hline \\\\ \\end{array}")
-J.hv(r.gwd(s),p)}r=y.gwd(v)
-r.h(r,s)}}},1],["mathfacts.binary_operands","package:mathfacts/binary_operands.dart",,L,{
+x=y.t(z,"type")
+w=H.Hp(y.t(z,"lowerBound"),null,null)
+v=H.Hp(y.t(z,"upperBound"),null,null)
+if(J.xC(x,"differences")){u=K.UI(w,v)
+t="-"}else{u=G.xm(w,v)
+t="+"}s=u.oF()
+r="Math Facts: "+u.gmk(u)
+document.querySelector("#title").textContent=r
+document.querySelector("#header").textContent=r
+q=document.querySelector("#factsTable")
+for(y=J.RE(q),p=s.Gi,o=0;o<5;++o){n=W.r3("tr",null)
+for(m=J.RE(n),l=0;l<10;++l){k=W.r3("td",null)
+if(s.wQ+1>p.length){s.wQ=0
+H.jE(p,C.pr)}j=s.wQ
+s.wQ=j+1
+if(j>=p.length)return H.e(p,j)
+j=p[j]
+J.t3(k,"\\begin{array}{cc} & "+H.d(j.gBb())+" \\\\ "+t+" & "+H.d(j.T8)+" \\\\ \\hline \\\\ \\end{array}")
+J.hv(m.gwd(n),k)}m=y.gwd(q)
+m.h(m,n)}}},1],["mathfacts.binary_operands","package:mathfacts/binary_operands.dart",,L,{
 "":"",
 tD:{
 "":"a;Bb<,T8",
 n:function(a,b){if(b==null)return!1
 return b.gBb()===this.Bb&&b.T8===this.T8},
 giO:function(a){return(this.Bb&0x1FFFFFFF)+(this.T8&0x1FFFFFFF)},
-bu:function(a){return"left: "+this.Bb+" right: "+H.d(this.T8)}}}],["mathfacts.sums_generator","package:mathfacts/sums_generator.dart",,G,{
+bu:function(a){return"left: "+H.d(this.Bb)+" right: "+H.d(this.T8)}}}],["mathfacts.differences_generator","package:mathfacts/differences_generator.dart",,K,{
+"":"",
+VE:{
+"":"a;vw,vJ,ta",
+oF:function(){return new L.mU(0,this.vJ)},
+gmk:function(a){return this.ta},
+k5:function(a,b){var z,y,x
+this.ta="Differences from "+H.d(a)+" to "+H.d(b)
+z=this.vJ
+y=b
+while(!0){if(typeof y!=="number")return y.F()
+if(typeof a!=="number")return H.s(a)
+if(!(y>=a))break
+for(x=y;x>=a;--x)z.push(new L.tD(y,x));--y}H.jE(z,C.pr)},
+static:{UI:function(a,b){var z=new K.VE(0,H.VM([],[L.tD]),null)
+z.k5(a,b)
+return z}}}}],["mathfacts.fact_enumerator","package:mathfacts/fact_enumerator.dart",,L,{
+"":"",
+mU:{
+"":"a;wQ,Gi"}}],["mathfacts.sums_generator","package:mathfacts/sums_generator.dart",,G,{
 "":"",
 bu:{
-"":"a;ea,HO,IZ",
+"":"a;HO,IZ",
+oF:function(){return new L.mU(0,this.HO)},
+gmk:function(a){return this.IZ},
 ne:function(a,b){var z,y,x,w,v
-this.IZ="Sums from "+H.d(a)+" to "+H.d(b)
 for(z=this.HO,y=1;y<=9;++y){if(typeof a!=="number")return a.W()
 x=P.y(a-y,1)
 if(typeof b!=="number")return b.W()
 w=P.J(b-y,9)
 for(v=x;v<=w;++v)z.push(new L.tD(y,v))}H.jE(z,C.pr)},
-static:{xm:function(a,b){var z=new G.bu(0,H.VM([],[L.tD]),null)
+static:{xm:function(a,b){var z=new G.bu(H.VM([],[L.tD]),"Sums from "+H.d(a)+" to "+H.d(b))
 z.ne(a,b)
 return z}}}}],])
 I.$finishClasses($$,$,null)
