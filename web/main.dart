@@ -2,14 +2,28 @@ import 'dart:html';
 import 'dart:convert';
 import 'package:mathfacts/fact_formatter.dart';
 import 'package:mathfacts/sums_generator.dart';
+import 'package:mathfacts/differences_generator.dart';
 
 void main() {
   var config = JSON.decode(querySelector("#config").innerHtml);
+  var type = config['type'];
   int lowerBound = int.parse(config['lowerBound']);
   int upperBound = int.parse(config['upperBound']);
   
-  var formatter = new FactFormatter("+");
-  var generator = new SumsGenerator(lowerBound, upperBound);
+  String operator;
+  var generator;
+  
+  if (type == 'differences') {
+    operator = '-';
+    generator = new DifferencesGenerator(lowerBound, upperBound);
+  }
+  else {
+    operator = '+';
+    generator = new SumsGenerator(lowerBound, upperBound);
+  }
+  
+  var formatter = new FactFormatter(operator);
+  
   var enumerator = generator.getEnumerator();
   
   var titleText = 'Math Facts: ${generator.title}';
