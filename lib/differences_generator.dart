@@ -1,9 +1,10 @@
 library mathfacts.differences_generator;
 
-import 'dart:math';
+import 'fact_enumerable.dart';
+import 'fact_enumerator.dart';
 import 'binary_operands.dart';
 
-class DifferencesGenerator {
+class DifferencesGenerator implements FactEnumerable {
   int _index = 0;
   final List<BinaryOperands> _facts = new List<BinaryOperands>();
   String _title;
@@ -18,16 +19,8 @@ class DifferencesGenerator {
     }
   }
   
-  BinaryOperands next() {
-    if (_index + 1 > _facts.length) {
-      _index = 0;
-      _facts.shuffle(new Random());
-    }
-    return _facts[_index++];
-  }
-  
-  int get count {
-    return _facts.length;
+  FactEnumerator getEnumerator() {
+    return new FactEnumerator(_facts);
   }
   
   String get title {

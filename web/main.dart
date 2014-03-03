@@ -10,6 +10,7 @@ void main() {
   
   var formatter = new FactFormatter("+");
   var generator = new SumsGenerator(lowerBound, upperBound);
+  var enumerator = generator.getEnumerator();
   
   var titleText = 'Math Facts: ${generator.title}';
   
@@ -24,7 +25,7 @@ void main() {
     var factsRow = new Element.tag('tr');
     for (int column = 0; column < 10; ++column) {
       var fact = new Element.tag('td');
-      fact.text = formatter.format(generator.next());
+      fact.text = formatter.format(enumerator.next());
       factsRow.children.add(fact);
     }
     factsTable.children.add(factsRow);
