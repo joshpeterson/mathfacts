@@ -8,6 +8,6 @@ class FactFormatter {
   FactFormatter(this._operator);
   
   String format(BinaryOperands operands) {
-    return "\\begin{array}{cc} & ${operands.left} \\\\ ${_operator} & ${operands.right} \\\\ \\hline \\\\ \\end{array}";
+    return "\\begin{array}{cr} & ${operands.left} \\\\ ${_operator} & ${operands.right} \\\\ \\hline \\\\ \\end{array}";
   }
 }
