@@ -1503,7 +1503,7 @@ GS:{
 "^":"Tp;",
 call$1:function(a){return J.Mp(a)}}}],["","file:///C:/Users/Josh/Documents/mathfacts/web/main.dart",,F,{
 "^":"",
-Iq:function(){var z,y,x,w,v,u,t,s,r,q,p,o,n,m,l,k,j
+Iq:function(){var z,y,x,w,v,u,t,s,r,q,p,o,n,m,l,k,j,i
 z=C.xr.kV(J.xR(document.querySelector("#config")))
 y=J.U6(z)
 x=y.t(z,"type")
@@ -1511,20 +1511,20 @@ w=H.Hp(y.t(z,"lowerBound"),null,null)
 v=H.Hp(y.t(z,"upperBound"),null,null)
 if(J.xC(x,"differences")){u=K.UI(w,v)
 t="-"}else{u=G.xm(w,v)
-t="+"}s=u.oF()
-r="Math Facts: "+u.gmk(u)
-document.querySelector("#title").textContent=r
-document.querySelector("#header").textContent=r
-q=document.querySelector("#factsTable")
-for(y=J.RE(q),p=s.Gi,o=0;o<5;++o){n=W.r3("tr",null)
-for(m=J.RE(n),l=0;l<10;++l){k=W.r3("td",null)
-if(s.wQ+1>p.length){s.wQ=0
-H.jE(p,C.pr)}j=s.wQ
-s.wQ=j+1
-if(j>=p.length)return H.e(p,j)
-j=p[j]
-J.t3(k,"\\begin{array}{cr} & "+H.d(j.gBb())+" \\\\ "+t+" & "+H.d(j.T8)+" \\\\ \\hline \\\\ \\end{array}")
-J.hv(m.gwd(n),k)}y.gwd(q).h(0,n)}}},1],["mathfacts.binary_operands","package:mathfacts/binary_operands.dart",,L,{
+t="+"}s=new L.zq(t)
+r=u.oF()
+q="Math Facts: "+u.gmk(u)
+document.querySelector("#title").textContent=q
+document.querySelector("#header").textContent=q
+p=document.querySelector("#factsTable")
+for(y=J.RE(p),o=r.Gi,n=0;n<5;++n){m=W.r3("tr",null)
+for(l=J.RE(m),k=0;k<10;++k){j=W.r3("td",null)
+if(r.wQ+1>o.length){r.wQ=0
+H.jE(o,C.pr)}i=r.wQ
+r.wQ=i+1
+if(i>=o.length)return H.e(o,i)
+J.t3(j,s.Yq(0,o[i]))
+J.hv(l.gwd(m),j)}y.gwd(p).h(0,m)}}},1],["mathfacts.binary_operands","package:mathfacts/binary_operands.dart",,L,{
 "^":"",
 tD:{
 "^":"a;Bb<,T8",
@@ -1550,7 +1550,12 @@ z.k5(a,b)
 return z}}}}],["mathfacts.fact_enumerator","package:mathfacts/fact_enumerator.dart",,L,{
 "^":"",
 mU:{
-"^":"a;wQ,Gi"}}],["mathfacts.sums_generator","package:mathfacts/sums_generator.dart",,G,{
+"^":"a;wQ,Gi"}}],["mathfacts.sum_formatter","package:mathfacts/fact_formatter.dart",,L,{
+"^":"",
+zq:{
+"^":"a;B3",
+Yq:function(a,b){if(b.gBb()>9||b.T8>9)return"\\begin{array}{r} "+H.d(b.Bb)+" \\\\ "+this.B3+" "+H.d(b.T8)+" \\\\ \\hline \\\\ \\end{array}"
+return"\\begin{array}{cr} & "+H.d(b.Bb)+" \\\\ "+this.B3+" & "+H.d(b.T8)+" \\\\ \\hline \\\\ \\end{array}"}}}],["mathfacts.sums_generator","package:mathfacts/sums_generator.dart",,G,{
 "^":"",
 bu:{
 "^":"a;HO,IZ",
@@ -3422,10 +3427,15 @@ if(!"name" in mU)mU.name="mU"
 $desc=$collectedClasses.mU
 if($desc instanceof Array)$desc=$desc[1]
 mU.prototype=$desc
+function zq(B3){this.B3=B3}zq.builtin$cls="zq"
+if(!"name" in zq)zq.name="zq"
+$desc=$collectedClasses.zq
+if($desc instanceof Array)$desc=$desc[1]
+zq.prototype=$desc
 function bu(HO,IZ){this.HO=HO
 this.IZ=IZ}bu.builtin$cls="bu"
 if(!"name" in bu)bu.name="bu"
 $desc=$collectedClasses.bu
 if($desc instanceof Array)$desc=$desc[1]
 bu.prototype=$desc
-return[qE,Gh,fY,Mr,lJ,ct,VH,QP,IF,n6,Ny,OM,fW,d7,HA,vH,xO,rV,Wy,QF,hs,cm,Nh,cv,Fs,hY,ea,D0,as,Aa,Yu,iG,mK,xf,xn,Vb,QH,ST,X2,tb,pA,Mi,kM,wP,eP,A6,Og,M6,El,mC,SV,ZY,Ee,Qb,xI,eY,KV,BH,KY,G7,l9,Ql,wL,SN,HD,p3,qj,nC,KR,fs,j2,lp,kd,I0,yN,Cp,HN,fq,h4,qk,GI,Tb,Iv,BT,yY,kJ,FB,FH,RH,lz,vw,aG,UM,hq,WS,r0,yp,c1,JU,Nf,Nc,Zv,Dh,ZJ,jH,eZ,IT,ui,VL,DQ,Sm,xL,es,jw,lv,pf,NV,W1,zo,wf,TU,ih,Nd,zp,Xu,lu,tk,me,oB,Ah,d4,MI,Ub,bM,eW,Qy,ju,OE,N9,BA,d0,tp,rE,PI,PQ,uz,Yd,NO,AD,Gr,Gq,GH,To,NJ,qI,jf,rQ,Lx,f6,d5,hy,r8,aS,CG,UN,jk,Rk,Eo,Pe,ox,ZD,cu,BD,vR,j8,Ja,zI,cB,LQ,yR,HP,fa,l4,Et,QS,Pi,qO,xt,tG,P0,Qm,FK,Gv,yE,CD,Ue,iC,is,Q,P,im,VA,O,FD,Zr,W0,az,vV,Am,dr,TL,KX,uZ,OQ,Tp,Bp,v,Eq,dC,wN,VX,a7,U5,SO,YB,db,jg,YO,oz,u3,mW,ar,lD,ZQ,JC,f1,Uk,wI,by,Mx,CL,Ge,LK,AT,bJ,ub,ds,UV,VS,t7,HG,aE,An,c8,a,Rn,VG,RA,ec,e7,yo,kE,Pb,W9,mg,D7,Zf,GS,tD,VE,mU,bu]}
+return[qE,Gh,fY,Mr,lJ,ct,VH,QP,IF,n6,Ny,OM,fW,d7,HA,vH,xO,rV,Wy,QF,hs,cm,Nh,cv,Fs,hY,ea,D0,as,Aa,Yu,iG,mK,xf,xn,Vb,QH,ST,X2,tb,pA,Mi,kM,wP,eP,A6,Og,M6,El,mC,SV,ZY,Ee,Qb,xI,eY,KV,BH,KY,G7,l9,Ql,wL,SN,HD,p3,qj,nC,KR,fs,j2,lp,kd,I0,yN,Cp,HN,fq,h4,qk,GI,Tb,Iv,BT,yY,kJ,FB,FH,RH,lz,vw,aG,UM,hq,WS,r0,yp,c1,JU,Nf,Nc,Zv,Dh,ZJ,jH,eZ,IT,ui,VL,DQ,Sm,xL,es,jw,lv,pf,NV,W1,zo,wf,TU,ih,Nd,zp,Xu,lu,tk,me,oB,Ah,d4,MI,Ub,bM,eW,Qy,ju,OE,N9,BA,d0,tp,rE,PI,PQ,uz,Yd,NO,AD,Gr,Gq,GH,To,NJ,qI,jf,rQ,Lx,f6,d5,hy,r8,aS,CG,UN,jk,Rk,Eo,Pe,ox,ZD,cu,BD,vR,j8,Ja,zI,cB,LQ,yR,HP,fa,l4,Et,QS,Pi,qO,xt,tG,P0,Qm,FK,Gv,yE,CD,Ue,iC,is,Q,P,im,VA,O,FD,Zr,W0,az,vV,Am,dr,TL,KX,uZ,OQ,Tp,Bp,v,Eq,dC,wN,VX,a7,U5,SO,YB,db,jg,YO,oz,u3,mW,ar,lD,ZQ,JC,f1,Uk,wI,by,Mx,CL,Ge,LK,AT,bJ,ub,ds,UV,VS,t7,HG,aE,An,c8,a,Rn,VG,RA,ec,e7,yo,kE,Pb,W9,mg,D7,Zf,GS,tD,VE,mU,zq,bu]}

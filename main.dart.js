@@ -1503,7 +1503,7 @@ GS:{
 "^":"Tp;",
 call$1:function(a){return J.Mp(a)}}}],["","file:///C:/Users/Josh/Documents/mathfacts/web/main.dart",,F,{
 "^":"",
-Iq:function(){var z,y,x,w,v,u,t,s,r,q,p,o,n,m,l,k,j
+Iq:function(){var z,y,x,w,v,u,t,s,r,q,p,o,n,m,l,k,j,i
 z=C.xr.kV(J.xR(document.querySelector("#config")))
 y=J.U6(z)
 x=y.t(z,"type")
@@ -1511,20 +1511,20 @@ w=H.Hp(y.t(z,"lowerBound"),null,null)
 v=H.Hp(y.t(z,"upperBound"),null,null)
 if(J.xC(x,"differences")){u=K.UI(w,v)
 t="-"}else{u=G.xm(w,v)
-t="+"}s=u.oF()
-r="Math Facts: "+u.gmk(u)
-document.querySelector("#title").textContent=r
-document.querySelector("#header").textContent=r
-q=document.querySelector("#factsTable")
-for(y=J.RE(q),p=s.Gi,o=0;o<5;++o){n=W.r3("tr",null)
-for(m=J.RE(n),l=0;l<10;++l){k=W.r3("td",null)
-if(s.wQ+1>p.length){s.wQ=0
-H.jE(p,C.pr)}j=s.wQ
-s.wQ=j+1
-if(j>=p.length)return H.e(p,j)
-j=p[j]
-J.t3(k,"\\begin{array}{cr} & "+H.d(j.gBb())+" \\\\ "+t+" & "+H.d(j.T8)+" \\\\ \\hline \\\\ \\end{array}")
-J.hv(m.gwd(n),k)}y.gwd(q).h(0,n)}}},1],["mathfacts.binary_operands","package:mathfacts/binary_operands.dart",,L,{
+t="+"}s=new L.zq(t)
+r=u.oF()
+q="Math Facts: "+u.gmk(u)
+document.querySelector("#title").textContent=q
+document.querySelector("#header").textContent=q
+p=document.querySelector("#factsTable")
+for(y=J.RE(p),o=r.Gi,n=0;n<5;++n){m=W.r3("tr",null)
+for(l=J.RE(m),k=0;k<10;++k){j=W.r3("td",null)
+if(r.wQ+1>o.length){r.wQ=0
+H.jE(o,C.pr)}i=r.wQ
+r.wQ=i+1
+if(i>=o.length)return H.e(o,i)
+J.t3(j,s.Yq(0,o[i]))
+J.hv(l.gwd(m),j)}y.gwd(p).h(0,m)}}},1],["mathfacts.binary_operands","package:mathfacts/binary_operands.dart",,L,{
 "^":"",
 tD:{
 "^":"a;Bb<,T8",
@@ -1550,7 +1550,12 @@ z.k5(a,b)
 return z}}}}],["mathfacts.fact_enumerator","package:mathfacts/fact_enumerator.dart",,L,{
 "^":"",
 mU:{
-"^":"a;wQ,Gi"}}],["mathfacts.sums_generator","package:mathfacts/sums_generator.dart",,G,{
+"^":"a;wQ,Gi"}}],["mathfacts.sum_formatter","package:mathfacts/fact_formatter.dart",,L,{
+"^":"",
+zq:{
+"^":"a;B3",
+Yq:function(a,b){if(b.gBb()>9||b.T8>9)return"\\begin{array}{r} "+H.d(b.Bb)+" \\\\ "+this.B3+" "+H.d(b.T8)+" \\\\ \\hline \\\\ \\end{array}"
+return"\\begin{array}{cr} & "+H.d(b.Bb)+" \\\\ "+this.B3+" & "+H.d(b.T8)+" \\\\ \\hline \\\\ \\end{array}"}}}],["mathfacts.sums_generator","package:mathfacts/sums_generator.dart",,G,{
 "^":"",
 bu:{
 "^":"a;HO,IZ",
