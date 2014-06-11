@@ -15,7 +15,8 @@ class DifferencesGenerator implements FactEnumerable {
     
     for (int left = upperBound; left >= lowerBound; --left) {
       for (int right = left; right >= lowerBound; --right) {
-        _facts.add(new BinaryOperands(left, right));
+        if (right < 10 && left - right <= 9)
+          _facts.add(new BinaryOperands(left, right));
       }
     }
     
