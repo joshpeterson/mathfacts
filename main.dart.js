@@ -1544,7 +1544,7 @@ y=b
 while(!0){if(typeof y!=="number")return y.F()
 if(typeof a!=="number")return H.s(a)
 if(!(y>=a))break
-for(x=y;x>=a;--x)z.push(new L.tD(y,x));--y}H.jE(z,C.pr)},
+for(x=y;x>=a;--x)if(x<10&&y-x<=9)z.push(new L.tD(y,x));--y}H.jE(z,C.pr)},
 static:{UI:function(a,b){var z=new K.VE(0,H.VM([],[L.tD]),null)
 z.k5(a,b)
 return z}}}}],["mathfacts.fact_enumerator","package:mathfacts/fact_enumerator.dart",,L,{
@@ -1562,12 +1562,13 @@ bu:{
 oF:function(){return new L.mU(0,this.HO)},
 gmk:function(a){return this.IZ},
 ne:function(a,b){var z,y,x,w,v
+this.IZ="Sums from "+H.d(a)+" to "+H.d(b)
 for(z=this.HO,y=1;y<=9;++y){if(typeof a!=="number")return a.W()
 x=P.y(a-y,1)
 if(typeof b!=="number")return b.W()
 w=P.J(b-y,9)
 for(v=x;v<=w;++v)z.push(new L.tD(y,v))}H.jE(z,C.pr)},
-static:{xm:function(a,b){var z=new G.bu(H.VM([],[L.tD]),"Sums from "+H.d(a)+" to "+H.d(b))
+static:{xm:function(a,b){var z=new G.bu(H.VM([],[L.tD]),null)
 z.ne(a,b)
 return z}}}}],])
 I.$finishClasses($$,$,null)
