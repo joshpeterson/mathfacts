@@ -10,7 +10,9 @@ class SumsGenerator implements FactEnumerable {
   final List<BinaryOperands> _facts = new List<BinaryOperands>();
   String _title;
   
-  SumsGenerator(int lowerBound, int upperBound) : _title = "Sums from ${lowerBound} to ${upperBound}" {
+  SumsGenerator(int lowerBound, int upperBound) {
+    _title = "Sums from ${lowerBound} to ${upperBound}";
+    
     for (int left = 1; left <= 9; ++left) {
       int startingRight = max(lowerBound - left, 1);
       int endingRight = min(upperBound - left, 9);

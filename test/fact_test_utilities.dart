@@ -32,6 +32,13 @@ void verifyAllRightOperandsPositive(FactEnumerator enumerator) {
   }
 }
 
+void verifyAllRightOperandsAreLessThan(int upperBound, FactEnumerator enumerator) {
+  for (int i = 0; i < enumerator.count; ++i) {
+    var operands = enumerator.next();
+    expect(operands.right, lessThan(upperBound));
+  }
+}
+
 void verifyAllOperandPairsAreDistinct(FactEnumerator enumerator) {
   var allOperandsSet = new Set();
   for (int i = 0; i < enumerator.count; ++i) {
