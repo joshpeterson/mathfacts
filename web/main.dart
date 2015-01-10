@@ -2,6 +2,7 @@ import 'dart:html';
 import 'dart:convert';
 import 'package:mathfacts/fact_formatter.dart';
 import 'package:mathfacts/sums_generator.dart';
+import 'package:mathfacts/products_generator.dart';
 import 'package:mathfacts/differences_generator.dart';
 
 void main() {
@@ -16,6 +17,10 @@ void main() {
   if (type == 'differences') {
     operator = '-';
     generator = new DifferencesGenerator(lowerBound, upperBound);
+  }
+  else if (type == 'products') {
+    operator = '\\times';
+    generator = new ProductsGenerator(lowerBound, upperBound);
   }
   else {
     operator = '+';

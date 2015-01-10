@@ -11,6 +11,10 @@ void verifyAllSumsAreInRange(int lowerBound, int upperBound, FactEnumerator enum
   verifyAllValuesAreInRange(lowerBound, upperBound, enumerator, sum);
 }
 
+void verifyAllProductsAreInRange(int lowerBound, int upperBound, FactEnumerator enumerator) {
+  verifyAllValuesAreInRange(lowerBound, upperBound, enumerator, product);
+}
+
 void verifyAllValuesAreInRange(int lowerBound, int upperBound, FactEnumerator enumerator, Binary operator) {
   for (int i = 0; i < enumerator.count; ++i) {
     var operands = enumerator.next();
@@ -53,4 +57,8 @@ int sum(int left, int right) {
 
 int difference(int left, int right) {
   return left - right;
+}
+
+int product(int left, int right) {
+  return left * right;
 }
