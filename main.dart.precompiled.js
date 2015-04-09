@@ -350,7 +350,7 @@ O:{
 "^":"String/Gv;",
 j:function(a,b){if(b>=a.length)throw H.b(P.N(b))
 return a.charCodeAt(b)},
-g:function(a,b){if(typeof b!=="string")throw H.b(P.u(b))
+g:function(a,b){if(typeof b!=="string")throw H.b(new P.AT(b))
 return a+b},
 Nj:function(a,b,c){if(c==null)c=a.length
 if(typeof c!=="number"||Math.floor(c)!==c)H.vh(P.u(c))
@@ -590,7 +590,7 @@ return a},
 oX:function(a){if(a==null)return
 return a.$builtinTypeInfo},
 IM:function(a,b){return H.Y9(a["$as"+H.d(b)],H.oX(a))},
-ip:function(a,b,c){var z=H.IM(a,b)
+W8:function(a,b,c){var z=H.IM(a,b)
 return z==null?null:z[c]},
 Kp:function(a,b){var z=H.oX(a)
 return z==null?null:z[b]},
@@ -698,20 +698,20 @@ x=y>>1
 w=z[1]
 return new H.FD(a,z,(y&1)===1,x,w>>1,(w&1)===1,z[2])}}},
 Zr:{
-"^":"a;bT,rq,Xs,Fa,Ga,cR",
+"^":"a;i9,FQ,Vv,yB,Sp,lv",
 qS:function(a){var z,y,x
-z=new RegExp(this.bT).exec(a)
+z=new RegExp(this.i9).exec(a)
 if(z==null)return
 y={}
-x=this.rq
+x=this.FQ
 if(x!==-1)y.arguments=z[x+1]
-x=this.Xs
+x=this.Vv
 if(x!==-1)y.argumentsExpr=z[x+1]
-x=this.Fa
+x=this.yB
 if(x!==-1)y.expr=z[x+1]
-x=this.Ga
+x=this.Sp
 if(x!==-1)y.method=z[x+1]
-x=this.cR
+x=this.lv
 if(x!==-1)y.receiver=z[x+1]
 return y},
 static:{"^":"lm,k1,Re,fN,qi,rZ,BX,tt,dt,A7",cM:function(a){var z,y,x,w,v,u
@@ -738,19 +738,19 @@ return new H.Zr(a.replace('\\$arguments\\$','((?:x|[^x])*)').replace('\\$argumen
   }
 }(a)}}},
 W0:{
-"^":"Ge;V7,Ga",
-bu:function(a){var z=this.Ga
-if(z==null)return"NullError: "+H.d(this.V7)
+"^":"Ge;VP,Sp",
+bu:function(a){var z=this.Sp
+if(z==null)return"NullError: "+H.d(this.VP)
 return"NullError: Cannot call \""+H.d(z)+"\" on null"},
 $isGe:true},
 az:{
-"^":"Ge;V7,Ga,cR",
+"^":"Ge;VP,Sp,lv",
 bu:function(a){var z,y
-z=this.Ga
-if(z==null)return"NoSuchMethodError: "+H.d(this.V7)
-y=this.cR
-if(y==null)return"NoSuchMethodError: Cannot call \""+z+"\" ("+H.d(this.V7)+")"
-return"NoSuchMethodError: Cannot call \""+z+"\" on \""+y+"\" ("+H.d(this.V7)+")"},
+z=this.Sp
+if(z==null)return"NoSuchMethodError: "+H.d(this.VP)
+y=this.lv
+if(y==null)return"NoSuchMethodError: Cannot call \""+z+"\" ("+H.d(this.VP)+")"
+return"NoSuchMethodError: Cannot call \""+z+"\" on \""+y+"\" ("+H.d(this.VP)+")"},
 $isGe:true,
 static:{T3:function(a,b){var z,y
 z=b==null
@@ -758,8 +758,8 @@ y=z?null:b.method
 z=z?null:b.receiver
 return new H.az(a,y,z)}}},
 vV:{
-"^":"Ge;V7",
-bu:function(a){var z=this.V7
+"^":"Ge;VP",
+bu:function(a){var z=this.VP
 return C.xB.gl0(z)?"Error":"Error: "+z}},
 Am:{
 "^":"Tp;a",
@@ -787,20 +787,20 @@ bu:function(a){return"Closure"}},
 Bp:{
 "^":"Tp;"},
 v:{
-"^":"Bp;nw,jm,cR,Vb",
+"^":"Bp;wc,nn,lv,Pp",
 n:function(a,b){var z
 if(b==null)return!1
 if(this===b)return!0
 z=J.x(b)
 if(typeof b!=="object"||b===null||!z.$isv)return!1
-return this.nw===b.nw&&this.jm===b.jm&&this.cR===b.cR},
+return this.wc===b.wc&&this.nn===b.nn&&this.lv===b.lv},
 giO:function(a){var z,y
-z=this.cR
-if(z==null)y=H.eQ(this.nw)
+z=this.lv
+if(z==null)y=H.eQ(this.wc)
 else y=typeof z!=="object"?J.v1(z):H.eQ(z)
-return(y^H.eQ(this.jm))>>>0},
+return(y^H.eQ(this.nn))>>>0},
 $isv:true,
-static:{"^":"mJ,P4",DV:function(a){return a.nw},yS:function(a){return a.cR},oN:function(){var z=$.mJ
+static:{"^":"mJ,P4",DV:function(a){return a.wc},yS:function(a){return a.lv},oN:function(){var z=$.mJ
 if(z==null){z=H.E2("self")
 $.mJ=z}return z},Wz:function(){var z=$.P4
 if(z==null){z=H.E2("receiver")
@@ -1091,10 +1091,10 @@ aN:function(a,b){var z,y
 z=this.gB(a)
 for(y=0;y<z;++y){b.call$1(this.t(a,y))
 if(z!==this.gB(a))throw H.b(P.a4(a))}},
-ev:function(a,b){return H.VM(new H.U5(a,b),[H.ip(a,"lD",0)])},
+ev:function(a,b){return H.VM(new H.U5(a,b),[H.W8(a,"lD",0)])},
 tt:function(a,b){var z,y,x
-if(b){z=H.VM([],[H.ip(a,"lD",0)])
-C.Nm.sB(z,this.gB(a))}else z=H.VM(Array(this.gB(a)),[H.ip(a,"lD",0)])
+if(b){z=H.VM([],[H.W8(a,"lD",0)])
+C.Nm.sB(z,this.gB(a))}else z=H.VM(Array(this.gB(a)),[H.W8(a,"lD",0)])
 for(y=0;y<this.gB(a);++y){x=this.t(a,y)
 if(y>=z.length)return H.e(z,y)
 z[y]=x}return z},
@@ -1503,6 +1503,8 @@ GS:{
 "^":"Tp;",
 call$1:function(a){return J.Mp(a)}}}],["","file:///C:/Users/Josh/Documents/mathfacts/web/main.dart",,F,{
 "^":"",
+Xc:[function(a){return Math.abs(a.Bb-a.T8)===1},"call$1","ZX",2,0,5],
+QD:[function(a){return a.Bb===a.T8},"call$1","to",2,0,5],
 Iq:function(){var z,y,x,w,v,u,t,s,r,q,p,o,n,m,l,k,j,i
 z=C.xr.kV(J.xR(document.querySelector("#config")))
 y=J.U6(z)
@@ -1512,7 +1514,8 @@ v=H.Hp(y.t(z,"upperBound"),null,null)
 y=J.x(x)
 if(y.n(x,"differences")){u=K.UI(w,v)
 t="-"}else if(y.n(x,"products")){u=N.TE(w,v)
-t="\\times"}else{u=G.xm(w,v)
+t="\\times"}else{if(y.n(x,"sumsOneApart"))u=G.xm(w,v,F.ZX())
+else u=y.n(x,"sumsDoubles")?G.xm(w,v,F.to()):G.xm(w,v,null)
 t="+"}s=new L.zq(t)
 r=u.oF()
 q="Math Facts: "+u.gmk(u)
@@ -1578,15 +1581,16 @@ bu:{
 "^":"a;HO,IZ",
 oF:function(){return new L.mU(0,this.HO)},
 gmk:function(a){return this.IZ},
-ne:function(a,b){var z,y,x,w,v
+Gx:function(a,b,c){var z,y,x,w,v,u,t
 this.IZ="Sums from "+H.d(a)+" to "+H.d(b)
-for(z=this.HO,y=1;y<=9;++y){if(typeof a!=="number")return a.W()
-x=P.y(a-y,1)
+for(z=c!=null,y=this.HO,x=1;x<=9;++x){if(typeof a!=="number")return a.W()
+w=P.y(a-x,1)
 if(typeof b!=="number")return b.W()
-w=P.J(b-y,9)
-for(v=x;v<=w;++v)z.push(new L.tD(y,v))}H.jE(z,C.pr)},
-static:{xm:function(a,b){var z=new G.bu(H.VM([],[L.tD]),null)
-z.ne(a,b)
+v=P.J(b-x,9)
+for(u=w;u<=v;++u){t=new L.tD(x,u)
+if(!z||c.call$1(t)===!0)y.push(t)}}H.jE(y,C.pr)},
+static:{xm:function(a,b,c){var z=new G.bu(H.VM([],[L.tD]),null)
+z.Gx(a,b,c)
 return z}}}}],])
 I.$finishClasses($$,$,null)
 $$=null
@@ -1831,7 +1835,7 @@ I.$lazy($,"_toStringVisiting","xg","xb",function(){return P.yv(null)})
 I.$lazy($,"_toStringList","yu","tw",function(){return[]})
 
 init.functionAliases={}
-init.metadata=[{func:"uO",args:[J.O]},{func:"Gl",ret:J.yE,args:[null,null]},{func:"bX",ret:J.im,args:[null]},{func:"E0",ret:J.yE,args:[P.a,P.a]},{func:"ZY",ret:J.im,args:[P.a]},];$=null
+init.metadata=[{func:"uO",args:[J.O]},{func:"Gl",ret:J.yE,args:[null,null]},{func:"bX",ret:J.im,args:[null]},{func:"E0",ret:J.yE,args:[P.a,P.a]},{func:"ZY",ret:J.im,args:[P.a]},{func:"IF",ret:J.yE,args:[L.tD]},];$=null
 I = I.$finishIsolateConstructor(I)
 $=new I()
 function convertToFastObject(properties) {
@@ -3052,30 +3056,30 @@ if(!"name" in FD)FD.name="FD"
 $desc=$collectedClasses.FD
 if($desc instanceof Array)$desc=$desc[1]
 FD.prototype=$desc
-function Zr(bT,rq,Xs,Fa,Ga,cR){this.bT=bT
-this.rq=rq
-this.Xs=Xs
-this.Fa=Fa
-this.Ga=Ga
-this.cR=cR}Zr.builtin$cls="Zr"
+function Zr(i9,FQ,Vv,yB,Sp,lv){this.i9=i9
+this.FQ=FQ
+this.Vv=Vv
+this.yB=yB
+this.Sp=Sp
+this.lv=lv}Zr.builtin$cls="Zr"
 if(!"name" in Zr)Zr.name="Zr"
 $desc=$collectedClasses.Zr
 if($desc instanceof Array)$desc=$desc[1]
 Zr.prototype=$desc
-function W0(V7,Ga){this.V7=V7
-this.Ga=Ga}W0.builtin$cls="W0"
+function W0(VP,Sp){this.VP=VP
+this.Sp=Sp}W0.builtin$cls="W0"
 if(!"name" in W0)W0.name="W0"
 $desc=$collectedClasses.W0
 if($desc instanceof Array)$desc=$desc[1]
 W0.prototype=$desc
-function az(V7,Ga,cR){this.V7=V7
-this.Ga=Ga
-this.cR=cR}az.builtin$cls="az"
+function az(VP,Sp,lv){this.VP=VP
+this.Sp=Sp
+this.lv=lv}az.builtin$cls="az"
 if(!"name" in az)az.name="az"
 $desc=$collectedClasses.az
 if($desc instanceof Array)$desc=$desc[1]
 az.prototype=$desc
-function vV(V7){this.V7=V7}vV.builtin$cls="vV"
+function vV(VP){this.VP=VP}vV.builtin$cls="vV"
 if(!"name" in vV)vV.name="vV"
 $desc=$collectedClasses.vV
 if($desc instanceof Array)$desc=$desc[1]
@@ -3130,10 +3134,10 @@ if(!"name" in Bp)Bp.name="Bp"
 $desc=$collectedClasses.Bp
 if($desc instanceof Array)$desc=$desc[1]
 Bp.prototype=$desc
-function v(nw,jm,cR,Vb){this.nw=nw
-this.jm=jm
-this.cR=cR
-this.Vb=Vb}v.builtin$cls="v"
+function v(wc,nn,lv,Pp){this.wc=wc
+this.nn=nn
+this.lv=lv
+this.Pp=Pp}v.builtin$cls="v"
 if(!"name" in v)v.name="v"
 $desc=$collectedClasses.v
 if($desc instanceof Array)$desc=$desc[1]
