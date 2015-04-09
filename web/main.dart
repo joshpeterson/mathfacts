@@ -6,8 +6,12 @@ import 'package:mathfacts/products_generator.dart';
 import 'package:mathfacts/differences_generator.dart';
 import 'package:mathfacts/binary_operands.dart';
 
-bool OneOperandIsOne(BinaryOperands operand) {
-    return operand.left == 1 || operand.right == 1;
+bool OperandsAreOneApart(BinaryOperands operand) {
+    return (operand.left - operand.right).abs() == 1;
+}
+
+bool OperandsAreTheSame(BinaryOperands operand) {
+    return operand.left == operand.right;
 }
 
 void main() {
@@ -27,10 +31,14 @@ void main() {
     operator = '\\times';
     generator = new ProductsGenerator(lowerBound, upperBound);
   }
-  else if (type == 'sumsOf1') {
+  else if (type == 'sumsOneApart') {
       operator = '+';
-      generator = new SumsGenerator(lowerBound, upperBound, OneOperandIsOne);
-    }
+      generator = new SumsGenerator(lowerBound, upperBound, OperandsAreOneApart);
+  }
+  else if (type == 'sumsDoubles') {
+      operator = '+';
+      generator = new SumsGenerator(lowerBound, upperBound, OperandsAreTheSame);
+  }
   else {
     operator = '+';
     generator = new SumsGenerator(lowerBound, upperBound);
