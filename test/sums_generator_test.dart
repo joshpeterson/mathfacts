@@ -1,6 +1,7 @@
 import 'package:unittest/unittest.dart';
 import 'package:mathfacts/sums_generator.dart';
 import 'fact_test_utilities.dart';
+import 'package:mathfacts/binary_operands.dart';
 
 main() {
   test("Returns the correct number of facts for the lower and upper bounds 10 and 18", () {
@@ -61,5 +62,14 @@ main() {
       enumerator.next();
     var wrappedOperands = enumerator.next();
     expect(wrappedOperands.left + wrappedOperands.right, inInclusiveRange(10, 18));
+  });
+  
+  bool OneOperandIsOne(BinaryOperands operand) {
+    return operand.left == 1 || operand.right == 1;
+  }
+  
+  test("A predicate can be used to filter operand pairs.", () {
+    var generator = new SumsGenerator(1, 10, OneOperandIsOne);
+    expect(generator.getEnumerator().count, equals(17));
   });
 }

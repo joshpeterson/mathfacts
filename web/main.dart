@@ -4,6 +4,11 @@ import 'package:mathfacts/fact_formatter.dart';
 import 'package:mathfacts/sums_generator.dart';
 import 'package:mathfacts/products_generator.dart';
 import 'package:mathfacts/differences_generator.dart';
+import 'package:mathfacts/binary_operands.dart';
+
+bool OneOperandIsOne(BinaryOperands operand) {
+    return operand.left == 1 || operand.right == 1;
+}
 
 void main() {
   var config = JSON.decode(querySelector("#config").innerHtml);
@@ -22,6 +27,10 @@ void main() {
     operator = '\\times';
     generator = new ProductsGenerator(lowerBound, upperBound);
   }
+  else if (type == 'sumsOf1') {
+      operator = '+';
+      generator = new SumsGenerator(lowerBound, upperBound, OneOperandIsOne);
+    }
   else {
     operator = '+';
     generator = new SumsGenerator(lowerBound, upperBound);
