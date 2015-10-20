@@ -15,10 +15,13 @@ bool OperandsAreTheSame(BinaryOperands operand) {
 }
 
 void main() {
-  var config = JSON.decode(querySelector("#config").innerHtml);
-  var type = config['type'];
-  int lowerBound = int.parse(config['lowerBound']);
-  int upperBound = int.parse(config['upperBound']);
+
+  var type = Uri.base.queryParameters['type'];
+  int lowerBound = int.parse(Uri.base.queryParameters['lowerBound']);
+  int upperBound = int.parse(Uri.base.queryParameters['upperBound']);
+  
+  if (lowerBound >= upperBound)
+    throw new ArgumentError('The lower bound must be less than or equal to the upper bound, please try again.');
   
   String operator;
   var generator;
@@ -39,9 +42,12 @@ void main() {
       operator = '+';
       generator = new SumsGenerator(lowerBound, upperBound, OperandsAreTheSame);
   }
-  else {
+  else if (type == 'sums') {
     operator = '+';
     generator = new SumsGenerator(lowerBound, upperBound);
+  }
+  else {
+    throw new ArgumentError('The type provided does not work, please try again.');
   }
   
   var formatter = new FactFormatter(operator);

@@ -35,7 +35,7 @@
     <title>Math Facts Practice Tests</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/mathfacts/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
     <link href="jumbotron-narrow.css" rel="stylesheet">
@@ -57,19 +57,73 @@
         <h3 class="text-muted">Math Facts Practice Tests</h3>
       </div>
 
-      <div class="jumbotron">
+      <div class="text-center">
         <h1>Math Facts Tests</h1>
-        <p class="lead">Create a test with fifty math facts, suitable for printing. Refresh the page to create a different test.</p>
-        <p><a class="btn btn-lg btn-success" href="sums1to10.html" role="button">Sums 1 to 10</a>
-        <a class="btn btn-lg btn-success" href="sums1to18OneApart.html" role="button">Sums 1 to 18 one apart</a></p>
+        <p class="lead">Create a test with fifty math facts, suitable for printing.</p>
+        <p class="lead">Refresh the page to create a different test.</p>
         
-        <p><a class="btn btn-lg btn-success" href="sums1to18Doubles.html" role="button">Sums 1 to 18 doubles</a>
-        <a class="btn btn-lg btn-success" href="sums10to18.html" role="button">Sums 10 to 18</a></p>
+        <br/>
+      
+        <form action="facts.html" class="form-inline">
+          <div class="form-group">
+            <label for="selectType">Type:</label>
+            <select class="form-control" id="selectType" name="type">
+              <option value="sums">Sums</option>
+              <option value="differences">Differences</option>
+              <option value="products">Products</option>
+              <option value="sumsOneApart">Sums one apart</option>
+              <option value="sumsDoubles">Sums doubles</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="selectLowerBound">From:</label>
+            <select class="form-control" id="selectLowerBound" name="lowerBound">
+              <option>0</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>            
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="selectUpperBound">To:</label>
+            <select class="form-control" id="selectUpperBound" name="upperBound">
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+              <option>13</option>
+              <option>14</option>
+              <option>15</option>
+              <option>16</option>
+              <option>17</option>
+              <option>18</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Create tests</button>
+        </form>
         
-        <p><a class="btn btn-lg btn-success" href="differences0to10.html" role="button">Differences 0 to 10</a>
-        <a class="btn btn-lg btn-success" href="differences1to18.html" role="button">Differences 1 to 18</a></p>
+        <br/>
         
-        <p><a class="btn btn-lg btn-success" href="products1to81.html" role="button">Products 1 to 81</a></p>
+        <p class="lead">Or try one of these options:</p>
+        
+        <p><a class="btn btn-lg btn-success" href="facts.html?type=sums&lowerBound=1&upperBound=10" role="button">Sums 1 to 10</a>
+        <a class="btn btn-lg btn-success" href="facts.html?type=sumsOneApart&lowerBound=1&upperBound=18" role="button">Sums 1 to 18 one apart</a></p>
+        
+        <p><a class="btn btn-lg btn-success" href="facts.html?type=sumsDoubles&lowerBound=1&upperBound=18" role="button">Sums 1 to 18 doubles</a>
+        <a class="btn btn-lg btn-success" href="facts.html?type=sums&lowerBound=0&upperBound=18" role="button">Sums 0 to 18</a></p>
+        
+        <p><a class="btn btn-lg btn-success" href="facts.html?type=differences&lowerBound=1&upperBound=10" role="button">Differences 0 to 10</a>
+        <a class="btn btn-lg btn-success" href="facts.html?type=differences&lowerBound=1&upperBound=18" role="button">Differences 1 to 18</a></p>
+        
+        <p><a class="btn btn-lg btn-success" href="facts.html?type=products&lowerBound=1&upperBound=81" role="button">Products 1 to 81</a></p>
       </div>
 
       <div class="row marketing" id="about">
@@ -98,7 +152,7 @@
       </div>
 
       <div class="footer">
-        <p>&copy; <a href="http://joshpeterson.github.io">Josh Peterson</a> 2015</p>
+        <p>&copy; <a href="http://joshpeterson.github.io">Josh Peterson</a></p>
       </div>
     </div> <!-- /container -->
   </body>
